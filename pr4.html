@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Курс HTML</title>
+</head>
+<body>
+
+    <!-- Шапка сайту з головним заголовком -->
+    <header>
+        <h1>Курс HTML для початківців</h1>
+        
+        <!-- Навігаційне меню -->
+        <nav aria-label="Головне меню">
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="lessons.html">Уроки курсу</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основний вміст сторінки -->
+    <main>
+        <!-- Секція інформації про курс -->
+        <section>
+            <h2>Про курс</h2>
+            <img src="students.jpg" alt="Студенти навчаються на курсі з розробки вебсторінок">
+            <p>На курсі ви навчитеся створювати вебсторінки.</p>
+        </section>
+
+        <!-- Секція реєстрації -->
+        <section>
+            <h2>Реєстрація</h2>
+            <form>
+                <div>
+                    <label for="name">Ім'я:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <button type="submit">Зареєструватися</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- 
+    Виправлені проблеми доступності:
+    1. Додано атрибут lang="uk" у тег <html> для визначення мови документу.
+    2. Виправлено структуру заголовків: головний заголовок змінено з <h2> на <h1>, а підзаголовки з <h4> на <h2>.
+    3. Додано семантичні теги <header>, <main>, <section> та <nav> замість звичайних <div>.
+    4. Додано альтернативний текст (alt) для зображення <img>.
+    5.. Змінено тип поля для пошти з type="text" на type="email".
+    -->
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1) rotate(-5deg);
+    }
+    50% {
+        transform: scale(1.15) rotate(-5deg);
+    }
+    100% {
+        transform: scale(1) rotate(-5deg);
+    }
+}
+
+
+.product-card {
+    position: relative;
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    
+    
+    animation: fadeInUp 0.8s ease-out forwards;
+    
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.badge-promo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #ff3b30;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(255, 59, 48, 0.4);
+
+    
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+
+.product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Змінили з cover на contain */
+    background-color: #fff; /* Додали білий фон на випадок інших пропорцій */
+    display: block;
+}
+
+
+.product-info {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 20px;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #6e6e73;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1d1d1f;
+}
+
+
+.buy-button {
+    background-color: #0071e3;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    
+    
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.buy-button:hover {
+    background-color: #005bb5;
+    transform: scale(1.08);
+}
+
+.buy-button:active {
+    transform: scale(0.96);
+}

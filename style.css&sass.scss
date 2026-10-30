@@ -1,0 +1,86 @@
+$primary-color: #3498db;
+$hover-color: #2980b9;
+$bg-color: #f4f6f7;
+$card-bg: #ffffff;
+$text-color: #333333;
+$border-radius: 12px;
+$spacing: 20px;
+
+@mixin custom-button($bg, $color) {
+    background-color: $bg;
+    color: $color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: darken($bg, 10%);
+        transform: translateY(-2px);
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $bg-color;
+    margin: 0;
+    padding: $spacing;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: $text-color;
+}
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background-color: $card-bg;
+    border-radius: $border-radius;
+    padding: $spacing;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    &__title {
+        font-size: 20px;
+        color: $text-color;
+        margin-top: 0;
+    }
+
+    &__desc {
+        color: #666666;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    &__price {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        color: $primary-color;
+        margin: 15px 0;
+    }
+
+    &__btn {
+        @include custom-button($primary-color, #ffffff);
+        width: 100%;
+    }
+}
